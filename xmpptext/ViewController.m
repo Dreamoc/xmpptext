@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "XMPPManager.h"
 @interface ViewController ()
 
 @end
@@ -16,12 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%d",[[XMPPManager sharedInstance] connect]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)onclick:(id)sender {
+    [[XMPPManager sharedInstance] sendMsg:@"123"];
 }
 
 @end
